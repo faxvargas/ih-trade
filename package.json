@@ -1,0 +1,31 @@
+{
+  "name": "ih-trade",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "dev": "nodemon index.js",
+    "seed": "node ./bin/seeds.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/faxvargas/ih-trade.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/faxvargas/ih-trade/issues"
+  },
+  "homepage": "https://github.com/faxvargas/ih-trade#readme",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "connect-mongo": "^4.6.0",
+    "dotenv": "^10.0.0",
+    "express": "^4.17.1",
+    "express-session": "^1.17.2",
+    "hbs": "^4.1.2",
+    "mongoose": "^6.0.7"
+  }
+}
