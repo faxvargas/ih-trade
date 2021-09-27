@@ -29,9 +29,6 @@ app.use((req,res)=>{
 
 // RUTEO 
 app.use("/auth", require("./routes/auth"))
-app.use("/auth", require("./routes/auth"))
-app.use("/auth", require("./routes/auth"))
-
 app.get("/",(req,res)=>{
     res.render("index")
 })
