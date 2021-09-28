@@ -23,9 +23,9 @@ app.use(express.urlencoded({extended:true}))
 // gestion d sesiones 
 require("./config/session.config")(app)
 
-app.use((req,res)=>{
-    res.locals.currentUser = req.session.currentUser
-})
+// app.use((req,res)=>{
+//   res.locals.currentUser = req.session.currentUser
+// })
 
 // RUTEO 
 app.use("/auth", require("./routes/auth"))
