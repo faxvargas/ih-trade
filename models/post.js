@@ -7,9 +7,10 @@ const postSchema = mongoose.Schema({
     },
     nombreDelProducto: String,
     descripcion:String,
-    NumeroTelefonico:Number, //hay muchas estafas, esto puede prevenir eso.
-    PorQueLoVende:String,
-    cantidad:Number
+    NumeroTelefonico:String, //hay muchas estafas, esto puede prevenir eso.
+    razonDeVenta:String,
+    cantidad:Number,
+    fechaDePublicacion:Date
 })
 
 const Post = mongoose.model("Post", postSchema)

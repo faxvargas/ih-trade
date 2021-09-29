@@ -1,0 +1,21 @@
+<h2>Cree una skin</h2>
+<form action="/skin/create" method="POST">
+<label>Skin Name</label>
+<input
+    type="text"
+    name="nombreDelaSkin"
+/>
+<label>Description</label>
+<textarea
+    type="text"
+    name="descripcion"
+></textarea>
+<label>Game</label>
+<select>
+    {{#each juegos}}
+<option value="{{this}}">
+    {{this}}
+</option>
+{{/each}}
+</select>
+</form>

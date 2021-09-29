@@ -21,7 +21,7 @@ const newUser = await User.create({
     email,
     passwordHash : hashedPassword
 })
-res.redirect("/")
+res.redirect("/auth/login")
 }
 exports.loginUser = async(req,res)=>{
     res.render("auth/login")
@@ -29,18 +29,22 @@ exports.loginUser = async(req,res)=>{
 
 exports.loginUserForm = async (req,res)=>{
     const {email,password} = req.body
-    if(email=== "" || password === ""){
+    // if(email=== "" || password === ""){
+        if(!email || !password || !email.length || !password.length ){
+            // que no sea undefined
+            // que no sea null
+            // en caso de ser boleano pregunta si es falso
         return res.render("auth/login",{
             errorMessage: "Puede que falte uno o dos campos para llenar, no puede dejarlos vacios."
         })
     }
     // se busca el usuario en base de datos 
     try{
-        const foundUser = await User.findOne({email})
+        const foundUser = await User.findOne({email:email})
         // en caso de que no existe se manda un mensaje de error 
         if(!foundUser){
             return res.render("auth/login",{
-                errorMessage: "El usuario o la constraseña son incorrectas.Intente nuevamente"
+                errorMessage: "El Email o la constraseña son incorrectas.Intente nuevamente"
             })
         }
         // en caso se encuentre se compara la contraseña del formulario con la de la base de datos 
