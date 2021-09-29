@@ -29,6 +29,8 @@ require("./config/session.config")(app)
 
 // RUTEO 
 app.use("/auth", require("./routes/auth"))
+app.use("/user",require("./routes/user"))
+app.use("/posts",require("./routes/post"))
 app.get("/",(req,res)=>{
     res.render("index")
 })

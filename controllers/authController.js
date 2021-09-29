@@ -30,7 +30,7 @@ exports.loginUser = async(req,res)=>{
 exports.loginUserForm = async (req,res)=>{
     const {email,password} = req.body
     if(email=== "" || password === ""){
-        return res.render(auth/login,{
+        return res.render("auth/login",{
             errorMessage: "Puede que falte uno o dos campos para llenar, no puede dejarlos vacios."
         })
     }
