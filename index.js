@@ -31,7 +31,8 @@ require("./config/session.config")(app)
 // RUTEO 
 app.use("/auth", require("./routes/auth"))
 app.use("/user",require("./routes/user"))
-app.use("/posts",require("./routes/post"))
+const PostRoutes= require("./routes/post")
+app.use("/", PostRoutes)
 const skinRoutes = require("./routes/skin")
 app.use("/", skinRoutes)
 app.get("/",(req,res)=>{

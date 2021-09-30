@@ -1,0 +1,14 @@
+<h2>Lista de publicaciones</h2>
+{{#each PostList}}
+<h2>{{this.nombreDelProducto}}</h2>
+<p>Acá puede ver la descripcion de la publicacion: {{descripcion}}</p>
+<p>Este es el numero del vendedor en caso quiera tener mas seguridad en el transcurso de su compra :{{NumeroTelefonico}}</p>
+<p>La razon por cual lo vende es la siguiente: {{razonDeVenta}}</p>
+<p>La fecha de publicacion es la siguiente: {{fechaDePublicacion}}</p>
+<img src={{imagen}} alt="Girl in a jacket" > 
+<a href="/post/{{this.id}}/edit">Editar</a>
+<form action="/post/{{this.id}}/delete" method="POST">
+<button type="submit" name="delete">Delete</button>
+<a href="/post/create">Acá puede crear una nueva publicacion</a>
+</form>
+{{/each}}
