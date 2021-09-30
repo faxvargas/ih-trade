@@ -1,4 +1,5 @@
 <h2>Lista de publicaciones</h2>
+{{#if PostList}}
 {{#each PostList}}
 <h2>{{this.nombreDelProducto}}</h2>
 <p>Acá puede ver la descripcion de la publicacion: {{descripcion}}</p>
@@ -9,6 +10,8 @@
 <a href="/post/{{this.id}}/edit">Editar</a>
 <form action="/post/{{this.id}}/delete" method="POST">
 <button type="submit" name="delete">Delete</button>
-<a href="/post/create">Acá puede crear una nueva publicacion</a>
 </form>
 {{/each}}
+{{/if}}
+<a href="/post/create">Acá puede crear una nueva publicacion</a>
+

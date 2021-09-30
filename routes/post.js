@@ -1,6 +1,8 @@
 const express           = require("express")
 const router            = express.Router()
 const Post = require("./../models/post")
+const Skin = require("./../models/Skin")
+const routeGuards = require("./../routes/middlewares/route-guard")
 
 // const postController    = require("./../controllers/postController")
 
@@ -19,7 +21,7 @@ const Post = require("./../models/post")
 // // http://localhost:3000/posts
 // router.get("/", postController.listPosts)
 
-router.get("/post",(req,res)=>{
+router.get("/post",routeGuards.isLoggedIn,(req,res)=>{
     Post.find({})
     .then((post)=>{
         res.render("post/list",{
@@ -28,19 +30,31 @@ router.get("/post",(req,res)=>{
     })
 })
 
-router.get("/post/create", (req,res,next)=>{
-    res.render("post/createpost")
+router.get("/post/create",routeGuards.isLoggedIn, (req,res,next)=>{
+    Skin.find({})
+    .then((skins)=>{
+        res.render("post/createpost",{
+            skins : skins
+        })
+    })
+    .catch((e)=>{
+        console.log(e)
+    })
+    
     })
 
 router.post("/post/create",(req,res,next)=>{
-    const {nombreDelProducto,descripcion,NumeroTelefonico,razonDeVenta,cantidad,fechaDePublicacion} = req.body
+    const {nombreDelProducto,descripcion,NumeroTelefonico,razonDeVenta,cantidad,fechaDePublicacion, skinSelected} = req.body
+    console.log(req.body)
     Post.create({
         nombreDelProducto,
         descripcion,
         NumeroTelefonico,
         razonDeVenta,
         cantidad,
-        fechaDePublicacion
+        fechaDePublicacion,
+        skinSelected
+
     })
     .then((newPost)=>{
         res.redirect("/post")

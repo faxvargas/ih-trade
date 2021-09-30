@@ -1,7 +1,7 @@
 const express= require("express")
 const router = express.Router()
 const Skin = require("./../models/Skin")
-
+const routeGuards = require("./middlewares/route-guard")
 // router.get("/create",skinController.getFormSkin)
 // router.post("/create",skinController.createSkin)
 
@@ -16,7 +16,7 @@ router.get("/skin", (req,res)=>{
     })
 });
 
-router.get("/skin/create",(req,res,next)=>{
+router.get("/skin/create",routeGuards.isLoggedIn,(req,res,next)=>{
     let juegos=["League of legends", "CS:GO", "Dota"]
     res.render("skin/createskin",{
         juegos : juegos

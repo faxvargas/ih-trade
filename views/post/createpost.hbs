@@ -27,6 +27,15 @@
          type="text"
          name="razonDeVenta"
 ></textarea>
+<label>Skin</label>
+<select name="skinSelected">
+      {{#each skins}}
+      <option value="{{this/_id}}">
+            {{this/nombreDelaSkin}}
+      </option>
+      {{/each}}
+</select>
+
 <label>Publication Date</label>
 <input
       type="date"
