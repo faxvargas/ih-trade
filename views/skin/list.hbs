@@ -1,0 +1,15 @@
+<h2>Skin publicada</h2>
+{{#each SkinList}}
+<h2>{{this.nombreDelaSkin}}</h2>
+<p>Acá puede ver la descripcion de la Skin: {{descripcion}}</p>
+<p>Este el juego al que pertenece esta skin :{{juegoAlQuePertenece}}</p>
+<p>Su calidad es de {{calidad}}</p>
+<img src={{imagen}} alt="Girl in a jacket" > 
+<a href="/skin/{{this.id}}/edit">Editar</a>
+<form action="/skin/{{this.id}}/delete" method="POST">
+<button type="submit" name="delete">Delete</button>
+<a href="/skin/create">Acá puede crear una skin nueva</a>
+</form>
+{{/each}}
+
+

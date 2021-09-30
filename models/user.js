@@ -17,9 +17,17 @@ const userSchema = mongoose.Schema({
         type: mongoose.Schema.Types.ObjectId,
         ref: "Post"
     }] 
-}, {
+},
+{
     timestamps: true
 })
+skin: [{      
+    type: mongoose.Schema.Types.ObjectId,
+    ref: "Skin"
+}] 
+{
+    timestamps: true
+}
 
 const User = mongoose.model("User", userSchema)
 

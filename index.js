@@ -25,13 +25,15 @@ require("./config/session.config")(app)
 
 // app.use((req,res)=>{
 //   res.locals.currentUser = req.session.currentUser
+  
 // })
 
 // RUTEO 
 app.use("/auth", require("./routes/auth"))
 app.use("/user",require("./routes/user"))
 app.use("/posts",require("./routes/post"))
-app.use("/skin",require("./routes/skin"))
+const skinRoutes = require("./routes/skin")
+app.use("/", skinRoutes)
 app.get("/",(req,res)=>{
     res.render("index")
 })

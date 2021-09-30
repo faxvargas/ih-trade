@@ -4,8 +4,8 @@ const SkinSchema = mongoose.Schema({
     nombreDelaSkin: String,
     descripcion:String,
     juegoAlQuePertenece:String, //hay muchas estafas, esto puede prevenir eso.
-    calidad:String,
-    imagen:String
+    calidad:Number,
+    imagen: String
     
 })
 
