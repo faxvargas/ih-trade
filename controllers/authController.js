@@ -57,7 +57,7 @@ exports.loginUserForm = async (req,res)=>{
         }
         // en caso coincida se crea una sesion y retorna una pagina de exito 
         req.session.currentUser = foundUser
-        return res.render("users/profile",{
+        return res.render("index",{
             foundUser
         })
     
