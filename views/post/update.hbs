@@ -1,16 +1,44 @@
-<h2>Edite la publicacion</h2>
-<form action="edit" method="POST" >
-<h2>Nombre del producto</h2>
-<input type="string" name="nombreDelProducto" placeholder="{{nombreDelProducto}}"/>
-<h2>Descripcion</h2>
-<input type="text" name ="descripcion" placeholder="{{descripcion}}"/>
-{{!-- <h2>Juego</h2>
-<input type="text" name="juego" placeholder="{{}}"" --}}
-<h2>Numero Telefonico</h2>
-<input type="text" name ="NumeroTelefonico" placeholder="{{NumeroTelefonico}}"/>
-<h2>Cantidad</h2>
-<input type="number" name ="cantidad" placeholder="{{cantidad}}"/>
-<h2>Fecha de Publicacion</h2>
-<input type="date" name="fechaDePublicacion" placeholder="{{fechaDePublicacion}}"
-<button type="submit">Enviar</button>
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet"  href="/stylesheets/styles.css"/>
+    <style>
+        label{
+            color:white;
+        }
+    </style>
+</head>
+<body>
+    <form action="edit" method="POST">
+  <div class="form-row">
+    <div class="form-group col-md-6">
+      <label for="inputName4">Skin Name</label>
+      <input type="text" class="form-control" name="nombreDelProducto" placeholder="{{nombreDelProducto}}">
+    </div>
+    <div class="form-group col-md-6">
+      <label for="inputText4" class="letra">Description</label>
+      <input type="text" class="form-control" name="descripcion"  placeholder="{{descripcion}}">
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="inputAmount">Amount</label>
+    <input type="number" class="form-control" name="cantidad" placeholder="{{cantidad}}">
+  </div>
+  <div class="form-group">
+    <label for="inputPhoneNumber2">Phone Number</label>
+    <input type="date" class="form-control" name="NumeroTelefonico" placeholder="{{NumeroTelefonico}}">
+  </div>
+  <div class="form-group col-md-2">
+      <label for="inputZip">Publication Date</label>
+      <input type="date" class="form-control" name="{{fechaDePublicacion}}">
+    </div> 
+    <button type="submit">Enviar</button>
 </form>
+</body>
+</html>
