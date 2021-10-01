@@ -1,4 +1,4 @@
-
+{{!-- 
 <h2>Cree una skin</h2>
 <form action="create" method="POST">
 <label>Skin Name</label>
@@ -32,4 +32,41 @@
      />
 
      <button type="submit">Crear Skin</button>
+</form> --}}
+
+<form action="create" method="POST">
+  <div class="form-row">
+    <div class="form-group col-md-6">
+      <label for="inputName4">Skin Name</label>
+      <input type="text" class="form-control" name="nombreDelaSkin" placeholder="Skin Name">
+    </div>
+    <div class="form-group col-md-6">
+      <label for="inputText4">Description</label>
+      <input type="text" class="form-control" name="descripcion"  placeholder="Description">
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="inputAmount">Calidad</label>
+    <input type="number" class="form-control" name="calidad" placeholder="Amount">
+  </div>
+    <div class="form-group col-md-4">
+      <label for="inputSkin">Juego</label>
+      <select name="juegoAlQuePertenece">
+    {{#each juegos}}
+<option value="{{this}}">
+    {{this}}
+</option>
+{{/each}}
+</select>
+</select>
+      </div>
+  <div class="form-row">
+    <div class="form-group col-md-6">
+      <label for="inputReasonForSale">Imagen</label>
+      <input type="text" class="form-control" name="imagen" placeholder=".jpeg">
+    </div>
+
+    </div>
+  </div>
+  <button type="submit" class="btn btn-primary">Publish Skin</button>
 </form>

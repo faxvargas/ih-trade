@@ -1,3 +1,14 @@
-body{
-    background-color: #57575f
-}
+
+.card img {
+    height: 200px;
+    object-fit: cover;
+  }
+ 
+ body{
+     background-image: url("https://th.bing.com/th/id/R.3d9d1f6209914bfb405f7f7c1c4e19bd?rik=8mMYMlQywMc%2bCw&pid=ImgRaw&r=0");
+     background-repeat: no-repeat;
+     background-attachment: fixed;
+     background-position: center;
+     
+     /* background-size: contain; */
+ } 

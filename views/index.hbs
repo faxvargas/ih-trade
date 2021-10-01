@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+{{!-- <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -13,5 +13,42 @@
     <p>Fax Trade te ayuda a vender y comprar de forma segura la inmensa variedad de skins que el usuario puede postear o del repertorio de nuestra misma pagina</p>
     <button type="button" class="btn btn-secondary"><a href="/auth/signup"</a>PRUEBALO AHORA</button>
 
+</body>
+</html> --}}
+<!-- views/index.hbs -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="stylesheet"  href="/stylesheets/styles.css"/>
+<body>
+    <div class="container">
+  <div class="row justify-content-around">
+    <div class="col-md-4">
+      <div class="card">
+        <img class="card-img-top" src="https://external-preview.redd.it/G9FdM-vpqQc0E4oefKgdH6PGpWMgOToCBbJ7C8HWQH4.jpg?auto=webp&s=8f75d01bcf31d3c79627bca0fc83cab8e0da38ba" alt="Skin">
+        <div class="card-body">
+          <h5 class="card-title">Create your Skin</h5>
+          <p class="card-text">Crea tu skin para tenerlo en tu inventario y luego venderlo.</p>
+          <a href="/skin/create" class="btn btn-primary">Create!</a>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="card">
+        <img class="card-img-top" src="https://is3-ssl.mzstatic.com/image/thumb/Purple117/v4/81/75/93/81759373-dc6e-4ed3-1c4a-34d966520c9c/source/512x512bb.jpg"            alt="Post">
+        <div class="card-body">
+          <h5 class="card-title">Create your Post</h5>
+          <p class="card-text">Cree su publicacion tomando la skin ya hecha en su inventario para venderlo.</p>
+          <a href="/post/create" class="btn btn-primary">Create!</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 </body>
 </html>
